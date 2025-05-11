@@ -1,32 +1,19 @@
 import React from 'react';
-import {
-  Navbar as NextUINavbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  NavbarMenuToggle,
-  NavbarMenu,
-  NavbarMenuItem,
-} from '@nextui-org/react';
+import LogoNavbar from '@/public/assets/logo/Logo.svg';
+import Image from 'next/image';
+import Link from 'next/link';
 const Navbar = () => {
   return (
-    <div>
-      <NextUINavbar>
-        <NavbarBrand>{/* LOGO */}</NavbarBrand>
-        <NavbarContent className='hidden sm:flex gap-4' justify='center'>
-          <NavbarItem isActive>
-            <p>Customers</p>
-          </NavbarItem>
-          <NavbarItem>
-            <p>Integrations</p>
-          </NavbarItem>
-        </NavbarContent>
-        <NavbarContent justify='end'>
-          <NavbarItem className='hidden lg:flex'>
-            <p>Login</p>
-          </NavbarItem>
-        </NavbarContent>
-      </NextUINavbar>
+    <div className='flex items-center justify-between py-2 mx-2'>
+      <div>
+        <Image src={LogoNavbar} alt='thinkfrim.svg' quality={100} />
+      </div>
+      <div className='space-x-4 text-lg font-light'>
+        <Link href='/'>Home</Link>
+        <Link href='/'>about</Link>
+        <Link href='/'>Works</Link>
+        <Link href='/'>Service</Link>
+      </div>
     </div>
   );
 };
